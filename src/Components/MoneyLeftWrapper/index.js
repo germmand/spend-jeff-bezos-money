@@ -7,10 +7,12 @@ import { withStyles } from '@material-ui/styles';
 import styles from './styles';
 // -------
 
+import MoneyStringConverter from '../../Utils/MoneyStringConverter';
+
 export const MoneyLeftWrapperRaw = ({ classes }) => (
   <div className={classes.moneyWrapper}>
     <Typography component="h1" variant="h4" align="center" noWrap color="textPrimary">
-      $120,000,000,000,000 Left
+      {`$${MoneyStringConverter(120000000000000)} Left`}
     </Typography>
   </div>
 );

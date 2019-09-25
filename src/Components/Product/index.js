@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import styles from './styles';
 // -------
 
+import MoneyStringConverter from '../../Utils/MoneyStringConverter';
+
 export const ProductRaw = ({ classes, item }) => (
   <Card className={classes.card}>
     <CardMedia 
@@ -25,7 +27,7 @@ export const ProductRaw = ({ classes, item }) => (
         {item.name}
       </Typography>
       <Typography variant="h5" component="h2">
-        {`$${item.price} USD`}
+        {`$${MoneyStringConverter(item.price)} USD`}
       </Typography>
     </CardContent>
     <CardActions>
