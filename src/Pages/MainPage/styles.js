@@ -1,4 +1,4 @@
-export default theme => ({
+export default () => ({
     root: {
         flexGrow: 1,
         paddingTop: '3%',

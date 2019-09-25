@@ -7,7 +7,7 @@ export default theme => ({
         justifyContent: 'center'
     },
     cardMedia: {
-        paddingTop: '56.25%', //16:9
+        paddingTop: '56.25%', // 16:9
         width: '100%',
     },
     cardContent: {

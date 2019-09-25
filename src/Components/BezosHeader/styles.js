@@ -1,4 +1,4 @@
-export default theme => ({
+export default () => ({
     paper: {
         paddingTop: '3%',
         paddingBottom: '3%',

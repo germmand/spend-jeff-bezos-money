@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Materail-UI
 import { withStyles } from '@material-ui/styles';
-import styles from './styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import styles from './styles';
 // -------
 
-export const BezosHeader = ({ classes }) => (
+export const BezosHeaderRaw = ({ classes }) => (
   <Paper className={classes.paper}>
     <Grid
       container
@@ -30,4 +31,8 @@ export const BezosHeader = ({ classes }) => (
   </Paper>
 );
 
-export default withStyles(styles)(BezosHeader);
+BezosHeaderRaw.propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export default withStyles(styles)(BezosHeaderRaw);
