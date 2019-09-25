@@ -20,6 +20,38 @@ const items = [{
     name: 'Burger',
     price: 5,
     image: '/images/items/burger.jpg',
+}, {
+    name: 'Book',
+    price: 16,
+    image: '/images/items/book.jpg',
+}, {
+    name: 'Skateboard',
+    price: 150,
+    image: '/images/items/skateboard.jpg',
+}, {
+    name: 'Gaming Console',
+    price: 250,
+    image: '/images/items/ps4.jpg',
+}, {
+    name: 'Drone',
+    price: 350,
+    image: '/images/items/drone.jpg',
+}, {
+    name: '4K TV',
+    price: 900,
+    image: '/images/items/4ktv.jpg',
+}, {
+    name: 'Smartphone',
+    price: 1000,
+    image: '/images/items/smartphone.jpg',
+}, {
+    name: 'Rolex',
+    price: 9000,
+    image: '/images/items/rolex.jpg',
+}, {
+    name: 'Lamborghini',
+    price: 200000,
+    image: '/images/items/lamborghini.jpg',
 }];
 
 export class MainPage extends React.Component {
