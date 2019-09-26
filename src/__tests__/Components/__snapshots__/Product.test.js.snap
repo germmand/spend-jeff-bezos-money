@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Component matches snapshot 1`] = `
+<div
+  className="MuiPaper-root MuiPaper-elevation1 MuiCard-root card-css MuiPaper-rounded"
+>
+  <div
+    className="MuiCardMedia-root card-media-css"
+    style={
+      Object {
+        "backgroundImage": "url(\\"dummy/image/path\\")",
+      }
+    }
+    title="dummy-item-name"
+  />
+  <div
+    className="MuiCardContent-root card-content-css"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h5"
+    >
+      dummy-item-name
+    </h2>
+    <h2
+      className="MuiTypography-root MuiTypography-h5"
+    >
+      $1,000 USD
+    </h2>
+  </div>
+  <div
+    className="MuiCardActions-root MuiCardActions-spacing"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary Mui-disabled Mui-disabled"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Sell
+      </span>
+    </button>
+    <div
+      className="MuiInputBase-root MuiInput-root MuiInput-underline input-css MuiInputBase-marginDense"
+      label="quantity"
+      onClick={[Function]}
+    >
+      <input
+        className="MuiInputBase-input MuiInput-input MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Quantity"
+        shrink="True"
+        type="number"
+        value={0}
+      />
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Buy
+      </span>
+    </button>
+  </div>
+</div>
+`;
