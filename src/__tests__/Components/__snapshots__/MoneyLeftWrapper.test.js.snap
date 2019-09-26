@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoneyLeftWrapper Component matches snapshot 1`] = `
+<div
+  className="money-wrapper-css"
+>
+  <h1
+    className="MuiTypography-root MuiTypography-h4 MuiTypography-colorTextPrimary MuiTypography-noWrap MuiTypography-alignCenter"
+  >
+    $123,456,789 Left
+  </h1>
+</div>
+`;

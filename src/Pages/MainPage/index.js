@@ -28,7 +28,7 @@ export class MainPageRaw extends React.Component {
       return (
         <div className={classes.root}>
           <BezosHeader />
-          <MoneyLeftWrapper />
+          <MoneyLeftWrapper moneyLeft={120000000000000} />
           {/* Items */}
           <Grid container spacing={4}>
             {products.map(product => (
