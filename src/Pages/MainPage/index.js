@@ -18,22 +18,72 @@ const {
   Product
 } = Components;
 
-// We disable eslint here to stop complaining about writing it as a pure function.
-// Since we're gonna need it like this later.
-// And I'm lazy enough to change it later I'll do it like this rn.
-// eslint-disable-next-line react/prefer-stateless-function
+// We export it for the unit tests.
+export const BEZOS_NET_WORTH = 120000000000000;
+
 export class MainPageRaw extends React.Component {     
+    constructor(props) {
+      super(props);
+      this.state = {
+        moneyLeft: BEZOS_NET_WORTH,
+        tradedItems: [],
+      };
+    }
+
+    onComputeMoneyLeft = () => {
+        const { tradedItems } = this.state;
+        let totalMoneySpent = 0;
+        for(let i = 0; i < tradedItems.length; i += 1) {
+            totalMoneySpent += tradedItems[i].price * tradedItems[i].quantity;
+        }
+        this.setState({
+            moneyLeft: BEZOS_NET_WORTH - totalMoneySpent,
+        });
+    }
+
+    onTradedItem = (item) => {
+        const { tradedItems } = this.state;
+        const index = tradedItems.findIndex(element => element.id === item.id);
+        if (index === -1) {
+            // Pushing to the array is performed like this here to maintain immutability.
+            // Same thing goes for updating an element. 
+            // That's why it's done like that in the 'else' statements.
+            this.setState({
+                tradedItems: [...tradedItems, item],
+            }, this.onComputeMoneyLeft);
+        } else if (item.quantity !== 0) {
+            // We check if the quantity is zero so that we can determine if we can remove it from the array altogether.
+            // Because we use tradedItems to render the bought products at the bottom and we don't want it to render something like:
+            // "zero items bought of 'x'".
+            this.setState({
+                tradedItems: [
+                    ...tradedItems.slice(0, index), 
+                    item,
+                    ...tradedItems.slice(index + 1)
+                ],
+            }, this.onComputeMoneyLeft);
+        } else {
+            this.setState({
+                tradedItems: [
+                    ...tradedItems.slice(0, index), 
+                    ...tradedItems.slice(index + 1)
+                ],
+            }, this.onComputeMoneyLeft);
+        }
+    };
+
     render() {
       const { classes } = this.props;
+      const { moneyLeft } = this.state;
       return (
         <div className={classes.root}>
           <BezosHeader />
-          <MoneyLeftWrapper moneyLeft={120000000000000} />
+          <MoneyLeftWrapper moneyLeft={moneyLeft} />
           {/* Items */}
           <Grid container spacing={4}>
             {products.map(product => (
               <Grid item key={product.id} xs={12} sm={6} md={4}>
-                <Product item={product} onTradedItem={() => {}} />
+                <Product item={product} onTradedItem={this.onTradedItem} />
               </Grid>
             ))}
           </Grid>
