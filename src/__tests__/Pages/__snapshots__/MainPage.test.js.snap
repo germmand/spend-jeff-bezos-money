@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPage Component matches snapshot 1`] = `
+<div
+  className="root-css"
+>
+  <div
+    className="MuiPaper-root MuiPaper-elevation1 BezosHeaderRaw-paper-1 MuiPaper-rounded"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <div
+          className="MuiAvatar-root BezosHeaderRaw-avatar-2"
+        >
+          <img
+            alt="Jeff Bezos"
+            className="MuiAvatar-img"
+            src="/images/bezos.jpg"
+          />
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <h1
+          className="MuiTypography-root MuiTypography-h4 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+        >
+          Spend Jeff Bezos' Money
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h1
+      className="MuiTypography-root MuiTypography-h4 MuiTypography-colorTextPrimary MuiTypography-noWrap MuiTypography-alignCenter"
+    >
+      $120,000,000,000,000 Left
+    </h1>
+  </div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation1 MuiCard-root MuiPaper-rounded"
+      >
+        <div
+          className="MuiCardMedia-root"
+          style={
+            Object {
+              "backgroundImage": "url(\\"/dummy/image/path\\")",
+            }
+          }
+          title="dummy product"
+        />
+        <div
+          className="MuiCardContent-root"
+        >
+          <h2
+            className="MuiTypography-root MuiTypography-h5"
+          >
+            dummy product
+          </h2>
+          <h2
+            className="MuiTypography-root MuiTypography-h5"
+          >
+            $1,000 USD
+          </h2>
+        </div>
+        <div
+          className="MuiCardActions-root MuiCardActions-spacing"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary Mui-disabled Mui-disabled"
+            disabled={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              Sell
+            </span>
+          </button>
+          <div
+            className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-marginDense"
+            label="quantity"
+            onClick={[Function]}
+          >
+            <input
+              className="MuiInputBase-input MuiInput-input MuiInputBase-inputMarginDense MuiInput-inputMarginDense"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Quantity"
+              shrink="True"
+              type="number"
+              value={0}
+            />
+          </div>
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              Buy
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
