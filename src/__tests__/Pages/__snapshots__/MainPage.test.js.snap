@@ -145,5 +145,29 @@ exports[`MainPage Component matches snapshot 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="MuiPaper-root MuiPaper-elevation1 paper-css MuiPaper-rounded"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <h3
+          className="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+        >
+          Your Shopping Cart
+        </h3>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;

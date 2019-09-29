@@ -5,4 +5,9 @@ export default () => ({
         margin: '0 auto',
         width: '70%',
     },
+    paper: {
+        padding: '2%',
+        marginTop: 15,
+        marginBottom: 10,
+    },
 });

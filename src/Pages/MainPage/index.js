@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 // Material-UI
 import { withStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 // -------
 
 import styles from './styles';
@@ -15,7 +17,8 @@ import Components from '../../Components';
 const { 
   BezosHeader, 
   MoneyLeftWrapper,
-  Product
+  Product,
+  TradedItem,
 } = Components;
 
 // We export it for the unit tests.
@@ -74,7 +77,7 @@ export class MainPageRaw extends React.Component {
 
     render() {
       const { classes } = this.props;
-      const { moneyLeft } = this.state;
+      const { moneyLeft, tradedItems } = this.state;
       return (
         <div className={classes.root}>
           <BezosHeader />
@@ -87,6 +90,36 @@ export class MainPageRaw extends React.Component {
               </Grid>
             ))}
           </Grid>
+          {/* Traded Items */}
+          <Paper className={classes.paper}>
+            <Grid 
+              container
+              spacing={3}
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item xs={12}>
+                <Typography
+                  component="h3"
+                  variant="h5"
+                  align="center"
+                  color="textPrimary"
+                >
+                  Your Shopping Cart
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Grid container spacing={4}>
+                  {tradedItems.map(tradedItem => (
+                    <Grid item xs={6} md={3} key={tradedItem.id}>
+                      <TradedItem item={tradedItem} />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
+            </Grid>
+          </Paper>
         </div>
       );
     }

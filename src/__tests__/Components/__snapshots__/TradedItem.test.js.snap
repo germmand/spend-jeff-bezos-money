@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TradedItem Component matches snapshot 1`] = `
+<div
+  className="container-css"
+>
+  <div
+    className="MuiAvatar-root product-image-css"
+  >
+    <img
+      alt="dummy item name"
+      className="MuiAvatar-img"
+      src="/path/to/dummy/traded/item"
+    />
+  </div>
+  <h5
+    className="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary"
+  >
+    dummy item name
+     
+    x
+    1
+  </h5>
+</div>
+`;

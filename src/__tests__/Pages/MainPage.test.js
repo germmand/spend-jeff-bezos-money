@@ -29,6 +29,7 @@ describe('MainPage Component', () => {
         const props = {
             classes: {
                 root: 'root-css',
+                paper: 'paper-css',
             },
         };
         const mainPageComponentTree = renderer.create(
@@ -41,6 +42,7 @@ describe('MainPage Component', () => {
         const props = {
             classes: {
                 root: 'root-css',
+                paper: 'paper-css',
             },
         };
         const mockedProduct = {
@@ -61,6 +63,7 @@ describe('MainPage Component', () => {
         const props = {
             classes: {
                 root: 'root-css',
+                paper: 'paper-css',
             },
         };
         const mockedTradedItem = {
@@ -84,6 +87,7 @@ describe('MainPage Component', () => {
         const props = {
             classes: {
                 root: 'root-css',
+                paper: 'paper-css',
             },
         };
         const mockedTradedItem = {
@@ -108,6 +112,7 @@ describe('MainPage Component', () => {
         const props = {
             classes: {
                 root: 'root-css',
+                paper: 'paper-css',
             },
         };
         const mockedTradedItem = {
