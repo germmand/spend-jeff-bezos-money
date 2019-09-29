@@ -47,10 +47,21 @@ jobs:
       - run:
           name: Run test suite.
           command: yarn test
+  build:
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - run:
+          name: Building Application.
+          command: yarn build
+      - persist_to_workspace:
+          root: *working_directory
+          paths:
+            - ./build 
 
 workflows:
   version: 2.1
-  lint_and_test:
+  app_build_and_deploy:
     jobs:
       - setup
       - lint:
@@ -59,3 +70,7 @@ workflows:
       - test:
           requires:
             - setup
+      - build:
+          requires:
+            - lint
+            - test
