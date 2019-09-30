@@ -1,4 +1,4 @@
-## Spend Jeff Bezos Money
+## Spend Jeff Bezos Money - [![CircleCI](https://circleci.com/gh/germmand/spend-jeff-bezos-money.svg?style=shield)](https://circleci.com/gh/germmand/spend-jeff-bezos-money)
 
 This is just a simple website built with React where you can pretty much see how much stuff you can buy using Jeff Bezos' net worth.
 Okay, okay, I get it, you might be thinking: "Aight, but what's the point of this?" **None**; there's no point. I was just bored and said: "You know what? Let's build this 'cuz why not?"
