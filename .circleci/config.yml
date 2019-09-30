@@ -8,8 +8,6 @@ references:
   workspace: &attach_workspace
     attach_workspace:
       at: *working_directory
-  netlify_environment: &netlify_environment
-    NETLIFY_SITE_ID: spend-jeff-bezos-money.netlify.com
 
 executors:
   node-executor:
@@ -56,28 +54,6 @@ jobs:
       - run:
           name: Building Application.
           command: yarn build
-      - persist_to_workspace:
-          root: *working_directory
-          paths:
-            - ./build 
-  stage:
-    executor: node-executor
-    environment:
-      <<: *netlify_environment
-    steps:
-      - *attach_workspace
-      - run:
-          name: Staging production-ready app to Netlify
-          command: ./node_modules/.bin/netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --dir ./build
-  deploy:
-    executor: node-executor
-    environment:
-      <<: *netlify_environment
-    steps:
-      - *attach_workspace
-      - run:
-          name: Deploying to Netlify
-          command: ./node_modules/.bin/netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --dir ./build --prod
 
 workflows:
   version: 2.1
@@ -94,12 +70,3 @@ workflows:
           requires:
             - lint
             - test
-      - stage:
-          requires:
-            - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
