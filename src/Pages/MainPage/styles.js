@@ -10,4 +10,7 @@ export default () => ({
         marginTop: 15,
         marginBottom: 10,
     },
+    fullWidth: {
+        width: '100%'
+    },
 });
