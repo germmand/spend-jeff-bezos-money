@@ -109,10 +109,10 @@ export class MainPageRaw extends React.Component {
                   Your Shopping Cart
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
-                <Grid container spacing={4}>
+              <Grid item xs={12} className={classes.fullWidth}>
+                <Grid container>
                   {tradedItems.map(tradedItem => (
-                    <Grid item xs={6} md={3} key={tradedItem.id}>
+                    <Grid item xs={12} sm={6} md={3} key={tradedItem.id}>
                       <TradedItem item={tradedItem} />
                     </Grid>
                   ))}

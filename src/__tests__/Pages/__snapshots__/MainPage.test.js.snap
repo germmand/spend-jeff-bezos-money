@@ -164,7 +164,7 @@ exports[`MainPage Component matches snapshot 1`] = `
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+          className="MuiGrid-root MuiGrid-container"
         />
       </div>
     </div>
