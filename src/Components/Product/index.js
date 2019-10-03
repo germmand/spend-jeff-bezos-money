@@ -36,12 +36,11 @@ export class ProductRaw extends React.Component {
   };
 
   onChangeQuantity = event => {
-    this.setState({
-      // We need to parse to Number otherwise it'll be appended as a string.
-      // So when a button is clicked, the '1' will be appended at the end as a string
-      // rather than add it as a sum.
-      quantity: Number(event.target.value),
-    }, this.onProductUpdated);
+    if( event.target.value > 0 ) {
+      this.setState({
+        quantity: Number(event.target.value),
+      }, this.onProductUpdated);
+    }
   };
 
   onButtonClick = (value) => () => {
