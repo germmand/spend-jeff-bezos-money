@@ -169,5 +169,17 @@ exports[`MainPage Component matches snapshot 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="MuiPaper-root MuiPaper-elevation1 ContributorsRaw-paper-225 MuiPaper-rounded"
+  >
+    <h3
+      className="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary MuiTypography-alignCenter"
+    >
+      Contributors
+    </h3>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+    />
+  </div>
 </div>
 `;
