@@ -208,4 +208,30 @@ describe('Product Component', () => {
         inputQuantity.props().onChange({ target: { value: expectedQuantity } });
         expect(props.onTradedItem).toHaveBeenCalledWith(expectedTradedItem);
     });
+
+    it('does not update state on negative inputs', () => {
+        const props = {
+          classes: {
+            card: "card-css",
+            cardMedia: "card-media-css",
+            cardContent: "card-content-css",
+            input: "input-css",
+          },
+          item: {
+            name: "dummy-item-name",
+            price: 1000,
+            image: "dummy/image/path",
+          },
+          onTradedItem: jest.fn(),
+        };
+        const initialQuantity = 25;
+        const productComponentWrapper = mount(<Product {...props} />);
+        productComponentWrapper.setState({
+            quantity: initialQuantity,
+        });
+        const inputQuantity = productComponentWrapper.find(Input);
+        expect(inputQuantity).toHaveLength(1);
+        inputQuantity.props().onChange({ target: { value: initialQuantity * -1 } });
+        expect(productComponentWrapper.state().quantity).toEqual(initialQuantity);
+    });
 });
