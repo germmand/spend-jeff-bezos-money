@@ -19,6 +19,7 @@ const {
   MoneyLeftWrapper,
   Product,
   TradedItem,
+  Contributors,
 } = Components;
 
 // We export it for the unit tests.
@@ -120,6 +121,7 @@ export class MainPageRaw extends React.Component {
               </Grid>
             </Grid>
           </Paper>
+          <Contributors />
         </div>
       );
     }
