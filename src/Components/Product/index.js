@@ -106,9 +106,9 @@ export class ProductRaw extends React.Component {
             margin="dense"
             placeholder="Quantity"
             value={toBuyquantity}
-            onChange={this.onButtonBuy}
+            onChange={this.onChangeQuantity}
           />
-          <Button size="medium" color="primary" onClick={this.onButtonClick(1)}>
+          <Button size="medium" color="primary" onClick={this.onButtonBuy()}>
             Buy
           </Button>
         </CardActions>
