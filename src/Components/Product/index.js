@@ -20,6 +20,7 @@ export class ProductRaw extends React.Component {
     super(props);
     this.state = {
       quantity: 0,
+      toBuyquantity: 0
     };
   }
 
@@ -29,8 +30,8 @@ export class ProductRaw extends React.Component {
     const { item, onTradedItem } = this.props;
     const { quantity } = this.state;
     const itemTraded = {
-        ...item,
-        quantity,
+      ...item,
+      quantity
     };
     onTradedItem(itemTraded);
   };
@@ -40,28 +41,37 @@ export class ProductRaw extends React.Component {
       // We need to parse to Number otherwise it'll be appended as a string.
       // So when a button is clicked, the '1' will be appended at the end as a string
       // rather than add it as a sum.
-      quantity: Number(event.target.value),
-    }, this.onProductUpdated);
+      toBuyquantity: Number(event.target.value)
+    });
   };
 
-  onButtonClick = (value) => () => {
-    const { quantity } = this.state;
-    this.setState({
-      quantity: quantity + value,
-    }, this.onProductUpdated);
+  onButtonClick = value => () => {
+    const { quantity, toBuyquantity } = this.state;
+    this.setState(
+      {
+        quantity: toBuyquantity + quantity
+      },
+      this.onProductUpdated
+    );
+  };
+
+  onButtonSell = value => () => {
+    const { quantity, toBuyquantity } = this.state;
+    this.setState(
+      {
+        quantity: quantity - toBuyquantity
+      },
+      this.onProductUpdated
+    );
   };
 
   render() {
     const { classes, item } = this.props;
-    const { quantity } = this.state;
+    const { quantity, toBuyquantity } = this.state;
     const enableSellButton = quantity === 0;
     return (
       <Card className={classes.card}>
-        <CardMedia 
-          image={item.image}
-          title={item.name}
-          className={classes.cardMedia}
-        />
+        <CardMedia image={item.image} title={item.name} className={classes.cardMedia} />
         <CardContent className={classes.cardContent}>
           <Typography variant="h5" component="h2">
             {item.name}
@@ -71,45 +81,41 @@ export class ProductRaw extends React.Component {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button 
-            size="medium" 
-            color="secondary" 
-            onClick={this.onButtonClick(-1)} 
+          <Button
+            size="medium"
+            color="secondary"
+            onClick={this.onButtonSell()}
             disabled={enableSellButton}
           >
-              Sell
+            Sell
           </Button>
-          <Input 
+          <Input
             className={classes.input}
             type="number"
             label="quantity"
             inputProps={{ shrink: 'True' }}
             margin="dense"
             placeholder="Quantity"
-            value={quantity}
+            value={toBuyquantity}
             onChange={this.onChangeQuantity}
           />
-          <Button 
-            size="medium" 
-            color="primary" 
-            onClick={this.onButtonClick(1)}
-          >
-              Buy
+          <Button size="medium" color="primary" onClick={this.onButtonClick(1)}>
+            Buy
           </Button>
         </CardActions>
       </Card>
     );
   }
-};
+}
 
 ProductRaw.propTypes = {
-    classes: PropTypes.objectOf(PropTypes.string).isRequired,
-    item: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        image: PropTypes.string.isRequired,
-    }).isRequired,
-    onTradedItem: PropTypes.func.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired
+  }).isRequired,
+  onTradedItem: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(ProductRaw);
