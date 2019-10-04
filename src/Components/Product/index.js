@@ -45,7 +45,7 @@ export class ProductRaw extends React.Component {
     });
   };
 
-  onButtonClick = value => () => {
+  onButtonBuy = value => () => {
     const { quantity, toBuyquantity } = this.state;
     this.setState(
       {
@@ -106,7 +106,7 @@ export class ProductRaw extends React.Component {
             margin="dense"
             placeholder="Quantity"
             value={toBuyquantity}
-            onChange={this.onChangeQuantity}
+            onChange={this.onButtonBuy}
           />
           <Button size="medium" color="primary" onClick={this.onButtonClick(1)}>
             Buy
