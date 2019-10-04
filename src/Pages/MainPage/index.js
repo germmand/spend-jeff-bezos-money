@@ -17,7 +17,7 @@ import Components from '../../Components';
 const { BezosHeader, MoneyLeftWrapper, Product, TradedItem } = Components;
 
 // We export it for the unit tests.
-export const BEZOS_NET_WORTH = 200000;
+export const BEZOS_NET_WORTH = 120000000;
 
 export class MainPageRaw extends React.Component {
   constructor(props) {
@@ -83,7 +83,7 @@ export class MainPageRaw extends React.Component {
         <Grid container spacing={4}>
           {products.map(product => (
             <Grid item key={product.id} xs={12} sm={6} md={4}>
-              <Product item={product} onTradedItem={this.onTradedItem} />
+              <Product item={product} onTradedItem={this.onTradedItem} moneyLeft={moneyLeft} />
             </Grid>
           ))}
         </Grid>
