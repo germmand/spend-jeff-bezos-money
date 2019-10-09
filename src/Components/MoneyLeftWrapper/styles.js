@@ -7,5 +7,6 @@ export default theme => ({
         top: 0,
         background: theme.palette.primary.main,
         flexGrow: 1,
+        zIndex: 1,
     },
 });
